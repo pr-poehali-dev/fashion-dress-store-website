@@ -22,12 +22,16 @@ const DRESSES = [
   { id: 4, name: "Midnight Cascade", price: 112000, style: "Вечерние", sizes: ["S", "M", "L", "XL"], img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/1d6c0d4f-6439-4afc-bcb1-2d16f589cdcf.jpg", tag: "Эксклюзив", trend: "Сапфир 2025" },
   { id: 5, name: "Emerald Ascent", price: 67000, style: "Коктейльные", sizes: ["XS", "S", "M"], img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/8a2fe32d-b476-4bcb-be70-fc569b401f68.jpg", tag: "Тренд", trend: "Зелёный 2025" },
   { id: 6, name: "Ivory Couture", price: 145000, style: "Свадебные", sizes: ["XS", "S", "M", "L"], img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/96bdddd4-3827-4112-809e-586192f67176.jpg", tag: "Премиум", trend: "Купюрная драпировка" },
+  { id: 15, name: "Grand Ballerina", price: 289000, style: "Свадебные", sizes: ["XS", "S", "M", "L"], img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/e025af98-8098-479d-ac8a-a64452e2200d.jpg", tag: "Эксклюзив", trend: "Пышный бал · Корсет 2026" },
+  { id: 16, name: "Silk Column", price: 198000, style: "Свадебные", sizes: ["XS", "S", "M"], img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/eddbea86-5d9f-4235-8583-5697ada4e75f.jpg", tag: "Тренд 2026", trend: "Минимализм · Колонна" },
+  { id: 17, name: "Flora Dream", price: 245000, style: "Свадебные", sizes: ["S", "M", "L"], img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/37ccc50b-b4b0-42a4-aa0b-fd151b1855b0.jpg", tag: "Хит 2026", trend: "Тюль · 3D цветы · Жемчуг" },
+  { id: 18, name: "Cape Royale", price: 312000, style: "Свадебные", sizes: ["XS", "S", "M", "L"], img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/63e3966d-7e96-48c2-baba-7b7ddfaaa543.jpg", tag: "Haute Couture", trend: "Кейп · Кружево · Шлейф" },
 ];
 
 export default function Catalog() {
   const [style, setStyle] = useState("Все");
   const [size, setSize] = useState("Все");
-  const [maxPrice, setMaxPrice] = useState(150000);
+  const [maxPrice, setMaxPrice] = useState(350000);
   const [liked, setLiked] = useState<number[]>([]);
 
   const filtered = DRESSES.filter((d) => {
@@ -87,7 +91,7 @@ export default function Catalog() {
             <input
               type="range"
               min={30000}
-              max={150000}
+              max={350000}
               step={5000}
               value={maxPrice}
               onChange={(e) => setMaxPrice(Number(e.target.value))}
