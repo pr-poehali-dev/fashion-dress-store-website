@@ -4,10 +4,14 @@ import Footer from "@/components/Footer";
 import Icon from "@/components/ui/icon";
 import { Link } from "react-router-dom";
 
-const STYLES = ["Все", "Вечерние", "Коктейльные", "Повседневные", "Свадебные", "Деловые"];
+const STYLES = ["Все", "Летние", "Вечерние", "Коктейльные", "Повседневные", "Свадебные", "Деловые"];
 const SIZES = ["Все", "XS", "S", "M", "L", "XL"];
 
 const DRESSES = [
+  { id: 7, name: "Soleil en Points", price: 58000, style: "Летние", sizes: ["XS", "S", "M", "L"], img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/cd3cda5f-f0ca-417b-9e43-876d4d7fe7fa.jpg", tag: "Лето 2026", trend: "Горошек · Жёлтое кружево" },
+  { id: 8, name: "Dentelle Dorée", price: 72000, style: "Летние", sizes: ["S", "M", "L"], img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/10a37d71-507a-40e5-ac79-997104ffeddb.jpg", tag: "Тренд 2025", trend: "Кружево · Горошек миди" },
+  { id: 9, name: "Golden Pois Maxi", price: 84500, style: "Летние", sizes: ["XS", "S", "M"], img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/38e7382d-fac0-4af3-adef-d80cdc844884.jpg", tag: "Новинка", trend: "Макси · Шёлк · Горошек" },
+  { id: 10, name: "Pois Cocktail", price: 49000, style: "Летние", sizes: ["S", "M", "L", "XL"], img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/caff969c-95a3-476c-8660-de5d22b302cc.jpg", tag: "Хит лета", trend: "Горошек · Жёлтое кружево" },
   { id: 1, name: "Nocturne Velvet", price: 89900, style: "Вечерние", sizes: ["S", "M", "L"], img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/8548fa76-bb6e-4c1c-bb70-06b1855f6aa0.jpg", tag: "Новинка", trend: "Бархат 2025" },
   { id: 2, name: "Ivory Reverie", price: 74500, style: "Повседневные", sizes: ["XS", "S", "M", "L"], img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/456c190d-cb84-47e3-a323-29bb52cfc5ab.jpg", tag: "Тренд", trend: "Молочный тон" },
   { id: 3, name: "Crimson Sculpt", price: 96000, style: "Вечерние", sizes: ["S", "M"], img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/066be33c-ac8b-454b-9020-3eb38739f50a.jpg", tag: "Хит", trend: "Скульптурность" },

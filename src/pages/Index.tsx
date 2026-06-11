@@ -5,6 +5,14 @@ import Footer from "@/components/Footer";
 import Icon from "@/components/ui/icon";
 
 const HERO_IMG = "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/96bdddd4-3827-4112-809e-586192f67176.jpg";
+
+const SUMMER = [
+  { img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/cd3cda5f-f0ca-417b-9e43-876d4d7fe7fa.jpg", name: "Soleil en Points", price: "58 000 ₽", trend: "Горошек · Жёлтое кружево", tag: "Лето 2026" },
+  { img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/10a37d71-507a-40e5-ac79-997104ffeddb.jpg", name: "Dentelle Dorée", price: "72 000 ₽", trend: "Кружево · Горошек миди", tag: "Тренд 2025" },
+  { img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/38e7382d-fac0-4af3-adef-d80cdc844884.jpg", name: "Golden Pois Maxi", price: "84 500 ₽", trend: "Макси · Шёлк · Горошек", tag: "Новинка" },
+  { img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/caff969c-95a3-476c-8660-de5d22b302cc.jpg", name: "Pois Cocktail", price: "49 000 ₽", trend: "Горошек · Жёлтое кружево", tag: "Хит лета" },
+];
+
 const FEATURED = [
   {
     img: "https://cdn.poehali.dev/projects/7db9888b-27d0-4de7-ae93-69200325d658/files/8548fa76-bb6e-4c1c-bb70-06b1855f6aa0.jpg",
@@ -135,6 +143,56 @@ export default function Index() {
             Весь каталог
           </Link>
         </FadeSection>
+      </section>
+
+      {/* Летние платья — горошек и жёлтое кружево */}
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <FadeSection className="mb-14">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+              <p className="text-[0.6rem] tracking-[0.35em] text-[#c9a84c] uppercase mb-3">Лето 2025 · 2026</p>
+              <h2 className="font-display text-4xl md:text-5xl text-ivory">
+                Горошек &amp; жёлтое кружево
+              </h2>
+              <p className="text-[#7a6a50] text-sm mt-3 max-w-md">
+                Главный тренд двух сезонов — игривый горошек с деликатной отделкой золотым кружевом. Лёгкость, летний шик, абсолютная женственность.
+              </p>
+            </div>
+            <Link
+              to="/catalog"
+              className="text-xs tracking-[0.2em] uppercase text-[#c9a84c] border border-[#c9a84c] px-6 py-3 hover:bg-[#c9a84c] hover:text-[#0d0d0d] transition-all whitespace-nowrap self-start md:self-auto"
+            >
+              Все летние
+            </Link>
+          </div>
+        </FadeSection>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {SUMMER.map((item, i) => (
+            <FadeSection key={i}>
+              <Link to="/catalog" className="group block catalog-card relative overflow-hidden">
+                <div className="aspect-[3/4] overflow-hidden">
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="absolute top-3 left-3">
+                  <span className="text-[0.55rem] tracking-[0.15em] uppercase px-2 py-0.5 font-semibold"
+                    style={{ background: "rgba(232,201,122,0.92)", color: "#0d0d0d" }}>
+                    {item.tag}
+                  </span>
+                </div>
+                <div className="card-overlay absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-[#0d0d0d33] to-transparent flex flex-col justify-end p-4">
+                  <p className="text-[0.5rem] tracking-[0.15em] text-[#e8c97a] uppercase mb-1">{item.trend}</p>
+                  <h3 className="font-display text-lg text-ivory leading-tight">{item.name}</h3>
+                  <span className="text-[#c9a84c] font-semibold text-sm mt-1">{item.price}</span>
+                </div>
+              </Link>
+            </FadeSection>
+          ))}
+        </div>
       </section>
 
       {/* Banner */}
